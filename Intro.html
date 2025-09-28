@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SignLang Welcome</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: #0a0f1a;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+      opacity: 0;
+      animation: blink 2s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 1; }
+    }
+
+    .typing {
+      font-size: 8rem;
+      font-weight: 700;
+      color: #cfd8dc;
+      border-right: 3px solid #4fc3f7;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      animation: typing 2s steps(10, end) forwards, blinkCursor 0.7s step-end infinite;
+      z-index: 2;
+    }
+
+    .typing.done {
+      border-right: none;
+    }
+
+    h1 {
+      font-size: 10rem;
+      font-weight: 700;
+      color: #4fc3f7;
+      margin: 0;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeSlideUp 1.5s ease-out forwards;
+      animation-delay: 2.2s;
+      z-index: 2;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 10ch; }
+    }
+
+    @keyframes blinkCursor {
+      0%, 100% { border-color: transparent; }
+      50% { border-color: #4fc3f7; }
+    }
+
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="typing" id="welcome">Welcome to</div>
+  <h1>SignLang</h1>
+
+  <script>
+    // Remove blinking cursor after typing animation ends
+    const welcome = document.getElementById("welcome");
+    welcome.addEventListener("animationend", (e) => {
+      if (e.animationName === "typing") {
+        welcome.classList.add("done");
+      }
+    });
+
+    // Create stars
+    function createStar() {
+      const star = document.createElement("div");
+      star.classList.add("star");
+      star.style.top = Math.random() * window.innerHeight + "px";
+      star.style.left = Math.random() * window.innerWidth + "px";
+      star.style.animationDuration = (1 + Math.random() * 3) + "s";
+      star.style.animationDelay = Math.random() * 3 + "s";
+      document.body.appendChild(star);
+    }
+
+    for (let i = 0; i < 120; i++) {
+      createStar();
+    }
+
+    // Redirect to main landing page after 5 seconds
+    setTimeout(() => {
+      window.location.href = "index.html"; // replace with your landing page URL
+    }, 5000);
+  </script>
+</body>
+</html>

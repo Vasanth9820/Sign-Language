@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Language Converter</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0a0f1a, #1c2b4a);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    header {
+      padding: 30px 10%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 5rem; /* main logo heading */
+      font-weight: 700;
+      color: #4fc3f7;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 30px;
+      font-weight: 500;
+      font-size: 2.5rem; /* nav links */
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #4fc3f7;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 100px 10%;
+    }
+
+    .hero h2 {
+      font-size: 5rem; /* hero heading */
+      font-weight: 700;
+      margin-bottom: 40px;
+      color: #4fc3f7;
+    }
+
+    .hero p {
+      font-size: 3rem; /* paragraph */
+      margin-bottom: 60px;
+      line-height: 1.6;
+      color: #cfd8dc;
+    }
+
+    .btn {
+      background: #4fc3f7;
+      color: #0a0f1a;
+      padding: 20px 60px;
+      border-radius: 50px;
+      font-size: 3rem; /* button text */
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #29b6f6;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 50px;
+      padding: 80px 10%;
+      text-align: center;
+    }
+
+    .feature-box {
+      background: #263859;
+      padding: 50px;
+      border-radius: 25px;
+      transition: transform 0.3s;
+    }
+
+    .feature-box:hover {
+      transform: translateY(-15px);
+    }
+
+    .feature-box h3 {
+      font-size: 5rem; /* feature headings */
+      color: #4fc3f7;
+      margin-bottom: 25px;
+    }
+
+    .feature-box p {
+      font-size: 3rem; /* feature text */
+      line-height: 1.6;
+    }
+
+    footer {
+      background: #0a0f1a;
+      text-align: center;
+      padding: 40px;
+      font-size: 2.5rem; /* footer text */
+      color: #90a4ae;
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 768px) {
+      header h1, .hero h2, .feature-box h3 {
+        font-size: 3rem;
+      }
+      .hero p, .btn, nav a, .feature-box p, footer {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>SignLang Converter</h1>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#try">Try Now</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Convert Sign Language into Text & Audio</h2>
+    <p>Our AI-powered Sign Language Converter helps bridge communication gaps by converting gestures into clear text and audio output in real time.</p>
+    <button class="btn">Start Converting</button>
+  </section>
+
+  <section id="features" class="features">
+    <div class="feature-box">
+      <h3>🖐 Gesture Recognition</h3>
+      <p>Advanced AI detects and interprets sign language gestures instantly.</p>
+    </div>
+    <div class="feature-box">
+      <h3>🔤 Text Conversion</h3>
+      <p>Convert recognized signs into accurate text for easy understanding.</p>
+    </div>
+    <div class="feature-box">
+      <h3>🔊 Audio Output</h3>
+      <p>Hear the converted speech output for seamless communication.</p>
+    </div>
+    <div class="feature-box">
+      <h3>🌍 Multilingual</h3>
+      <p>Supports multiple languages for global accessibility.</p>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 SignLang Converter. All rights reserved.
+  </footer>
+</body>
+</html>
